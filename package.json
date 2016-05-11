@@ -1,0 +1,39 @@
+{
+  "name": "proyecto-equipo-com",
+  "version": "1.0.0",
+  "description": "Proyecto final. PL0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alu0100825893/proyecto-equipo-com.git"
+  },
+  "keywords": [
+    "pl0"
+  ],
+  "author": {
+    "name": "Carlos Troyano Carmona"
+  },
+  "contributors": [
+    {
+      "name": "Oscar Catari Gutierrez",
+      "email": "alu0100825893@ull.edu.es"
+    },
+    {
+      "name": "Miguel Castro Caraballo",
+      "email": "alu0100886870@ull.edu.es"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100825893/proyecto-equipo-com/issues"
+  },
+  "homepage": "https://github.com/alu0100825893/proyecto-equipo-com#readme",
+   "dependencies": {
+    "express": "*",
+    "ejs": "*",
+    "express-ejs-layouts": "*"
+  }
+}

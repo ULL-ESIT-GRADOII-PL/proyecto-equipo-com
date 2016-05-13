@@ -20,9 +20,22 @@
   }
 }
 
-st     = i:ID ASSIGN e:exp            
-            { return {type: '=', left: i, right: e}; }
-       / IF e:exp THEN st:st ELSE sf:st
+code = first:st rest:(SC st)* {
+            //return tree(first,rest);
+            let f = [];
+            if (first) f.push(first);
+            
+            let aux = rest.map((x) => {
+                return x[1];
+            });
+            aux = f.concat(aux[0]);
+            //console.log(aux);
+            //console.log("obj");
+            
+            return aux;
+        }
+
+st     = IF e:exp THEN st:st ELSE sf:st
            {
              return {
                type: 'IFELSE',
@@ -39,12 +52,18 @@ st     = i:ID ASSIGN e:exp
                st: st
              };
            }
+        / assign
+        
+assign = i:ID ASSIGN e:exp
+            { return {type: '=', left: i, right: e}; }
 exp    = t:term   r:(ADD term)*   { return tree(t,r); }
 term   = f:factor r:(MUL factor)* { return tree(f,r); }
 
-factor = NUMBER
-       / ID
-       / LEFTPAR t:exp RIGHTPAR   { return t; }
+factor = assign
+        / NUMBER
+        / ID
+        / LEFTPAR t:exp RIGHTPAR   { return t; }
+       
 
 _ = $[ \t\n\r]*
 
@@ -53,6 +72,7 @@ ADD      = _ op:[+-] _ { return op; }
 MUL      = _ op:[*/] _ { return op; }
 LEFTPAR  = _"("_
 RIGHTPAR = _")"_
+SC = _ ";" _
 IF       = _ "if" _
 THEN     = _ "then" _
 ELSE     = _ "else" _

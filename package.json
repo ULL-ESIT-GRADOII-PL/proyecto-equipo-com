@@ -35,5 +35,8 @@
     "express": "*",
     "ejs": "*",
     "express-ejs-layouts": "*"
+  },
+  "devDependencies": {
+    "gulp": "*"
   }
 }

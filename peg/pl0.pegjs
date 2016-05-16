@@ -21,17 +21,14 @@
 }
 
 code = first:st rest:(SC st)* {
-            //return tree(first,rest);
             var f = [];
             if (first) f.push(first);
-            
+
             var aux = rest.map((x) => {
                 return x[1];
             });
+
             aux = f.concat(aux[0]);
-            //console.log(aux);
-            //console.log("obj");
-            
             return aux;
         }
 
@@ -44,7 +41,7 @@ st     = IF e:exp THEN st:st ELSE sf:st
                sf: sf,
              };
            }
-       / IF e:exp THEN st:st    
+       / IF e:exp THEN st:st
            {
              return {
                type: 'IF',
@@ -52,18 +49,53 @@ st     = IF e:exp THEN st:st ELSE sf:st
                st: st
              };
            }
+        / WHILE c:exp DO st:st {
+            return {
+              type: 'WHILE',
+              c:  c,
+              st: st
+            };
+        }
+        / RETURN e:exp {
+            return {
+              type: 'RETURN',
+              children: e
+            };
+        }
         / assign
-        
+
 assign = i:ID ASSIGN e:exp
             { return {type: '=', left: i, right: e}; }
-exp    = t:term   r:(ADD term)*   { return tree(t,r); }
+exp    = left:term comp:COMP right:term {
+          return {
+            type: comp,
+            left: left,
+            right: right
+          };
+        }
+        / t:term   r:(ADD term)*   { return tree(t,r); }
 term   = f:factor r:(MUL factor)* { return tree(f,r); }
 
 factor = assign
+        / f:ID LEFTPAR e:exp? r:(COMMA exp)* RIGHTPAR {
+            var f = [];
+            if (e) f.push(e);
+
+            var aux = r.map((x) => {
+                return x[1];
+            });
+
+            aux = f.concat(aux);
+            return {
+              type: 'CALL',
+              func: f,
+              arguments: aux
+            }
+        }
         / NUMBER
         / ID
         / LEFTPAR t:exp RIGHTPAR   { return t; }
-       
+
 
 _ = $[ \t\n\r]*
 
@@ -73,14 +105,19 @@ MUL      = _ op:[*/] _ { return op; }
 LEFTPAR  = _"("_
 RIGHTPAR = _")"_
 SC = _ ";" _
+COMMA = _ "," _
 IF       = _ "if" _
 THEN     = _ "then" _
 ELSE     = _ "else" _
-ID       = _ id:$([a-zA-Z_][a-zA-Z_0-9]*) _ 
-            { 
-              return { type: 'ID', value: id }; 
+WHILE    = _ "while" _
+DO       = _ "do" _
+RETURN = _ "return" _
+ID       = _ id:$([a-zA-Z_][a-zA-Z_0-9]*) _
+            {
+              return { type: 'ID', value: id };
             }
-NUMBER   = _ digits:$[0-9]+ _ 
-            { 
-              return { type: 'NUM', value: parseInt(digits, 10) }; 
+NUMBER   = _ digits:$[0-9]+ _
+            {
+              return { type: 'NUM', value: parseInt(digits, 10) };
             }
+COMP = _ comp:("=="/"!="/"<="/">="/"<"/">") _ { return comp; }

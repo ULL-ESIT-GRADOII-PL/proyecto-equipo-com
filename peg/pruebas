@@ -4,3 +4,12 @@ a = (b = 4)*b+2   = como expresion
 a = 5;
 b = 4 + 6       multiples sentencias con ;
 
+a = 4;          comparadores añadidos
+b = a <= 5;
+c = b > 3
+
+while 4  < 5 do a = 7   while do
+
+a = fact(8,6,a)   funciones llamada
+
+//array con undefined para una sentencia, con mas no ocurre

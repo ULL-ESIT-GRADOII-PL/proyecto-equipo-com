@@ -1,5 +1,5 @@
 
-var expect = chai.expect
+var expect = require('chai').expect
 
 //var PEG = require("./../models/pl0.js");
 

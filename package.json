@@ -41,8 +41,9 @@
     "mocha": "*",
     "chai": "*",
     "karma": "*",
-    "karma-mocha": "*"
-
+    "karma-mocha": "*",
+     "karma-firefox-launcher": "*",
+     "karma-phantomjs-launcher": "*"
   }
 
 }

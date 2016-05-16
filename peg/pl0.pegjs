@@ -22,10 +22,10 @@
 
 code = first:st rest:(SC st)* {
             //return tree(first,rest);
-            let f = [];
+            var f = [];
             if (first) f.push(first);
             
-            let aux = rest.map((x) => {
+            var aux = rest.map((x) => {
                 return x[1];
             });
             aux = f.concat(aux[0]);

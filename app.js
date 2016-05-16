@@ -26,7 +26,11 @@ app.get('/arbol', (req, res) => {
   let arbol = util.inspect(obj, {depth: null});
   console.log(arbol);
   res.send(arbol);
+
+  
 });
+
+
 
 app.listen(app.get('port'), () => {
   console.log("Node app is running at localhost:" + app.get('port'));

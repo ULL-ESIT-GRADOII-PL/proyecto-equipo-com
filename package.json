@@ -37,6 +37,12 @@
     "express-ejs-layouts": "*"
   },
   "devDependencies": {
-    "gulp": "*"
-  }
+    "gulp": "*",
+    "mocha": "*",
+    "chai": "*"
+    
+  },
+  "plugins": [
+    "mocha-exports-amd"
+  ]
 }

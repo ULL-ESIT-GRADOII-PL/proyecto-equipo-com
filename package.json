@@ -41,9 +41,8 @@
     "mocha": "*",
     "chai": "*",
     "karma": "*",
-    "karma-mocha": "*",
+    "karma-mocha": "*"
 
-  },
-
+  }
 
 }

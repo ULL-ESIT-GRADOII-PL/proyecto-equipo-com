@@ -2,7 +2,7 @@
  * Classic example grammar, which recognizes simple arithmetic expressions like
  * "2*(3+4)". The parser generated from this grammar then AST.
  */
-
+//pegjs pl0.pegjs ../models/pl0.js
 {
   var tree = function(f, r) {
     if (r.length > 0) {
@@ -21,15 +21,18 @@
 }
 
 code = first:st rest:(SC st)* {
-            var f = [];
-            if (first) f.push(first);
-
-            var aux = rest.map((x) => {
-                return x[1];
-            });
-
-            aux = f.concat(aux[0]);
-            return aux;
+            var result = [];
+            
+            if (first) result.push(first);
+            
+            if(rest.length != 0) {
+                var aux = rest.map((x) => {
+                    return x[1];
+                });
+            
+                result = result.concat(aux);
+            }
+            return result;
         }
 
 st     = IF e:exp THEN st:st ELSE sf:st
@@ -78,18 +81,22 @@ term   = f:factor r:(MUL factor)* { return tree(f,r); }
 
 factor = assign
         / f:ID LEFTPAR e:exp? r:(COMMA exp)* RIGHTPAR {
-            var f = [];
-            if (e) f.push(e);
+            var result = [];
+            
+            if (e) result.push(e);
 
-            var aux = r.map((x) => {
-                return x[1];
-            });
-
-            aux = f.concat(aux);
+            if(r.length != 0) {
+                var aux = r.map((x) => {
+                    return x[1];
+                });
+            
+                result = result.concat(aux);
+            }
+            
             return {
               type: 'CALL',
               func: f,
-              arguments: aux
+              arguments: result
             }
         }
         / NUMBER

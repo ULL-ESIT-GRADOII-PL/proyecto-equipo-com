@@ -1,1 +1,1 @@
-a = fact(8,6,a)
+if num <= 1 then return 1

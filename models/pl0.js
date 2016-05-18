@@ -37,15 +37,18 @@ module.exports = (function() {
         peg$startRuleFunction  = peg$parsecode,
 
         peg$c0 = function(first, rest) {
-                    var f = [];
-                    if (first) f.push(first);
-
-                    var aux = rest.map((x) => {
-                        return x[1];
-                    });
-
-                    aux = f.concat(aux[0]);
-                    return aux;
+                    var result = [];
+                    
+                    if (first) result.push(first);
+                    
+                    if(rest.length != 0) {
+                        var aux = rest.map((x) => {
+                            return x[1];
+                        });
+                    
+                        result = result.concat(aux);
+                    }
+                    return result;
                 },
         peg$c1 = function(e, st, sf) {
                      return {
@@ -86,18 +89,22 @@ module.exports = (function() {
         peg$c7 = function(t, r) { return tree(t,r); },
         peg$c8 = function(f, r) { return tree(f,r); },
         peg$c9 = function(f, e, r) {
-                    var f = [];
-                    if (e) f.push(e);
+                    var result = [];
+                    
+                    if (e) result.push(e);
 
-                    var aux = r.map((x) => {
-                        return x[1];
-                    });
-
-                    aux = f.concat(aux);
+                    if(r.length != 0) {
+                        var aux = r.map((x) => {
+                            return x[1];
+                        });
+                    
+                        result = result.concat(aux);
+                    }
+                    
                     return {
                       type: 'CALL',
                       func: f,
-                      arguments: aux
+                      arguments: result
                     }
                 },
         peg$c10 = function(t) { return t; },

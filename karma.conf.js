@@ -17,6 +17,7 @@ module.exports = function(config) {
     files: [
       'tests/mocha.js',
       'tests/chai.js',
+      'tests/pl0.js',
       'tests/tests.js'
 
     ],

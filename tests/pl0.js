@@ -42,7 +42,7 @@ peg = (function() {
                     if (first) result.push(first);
                     
                     if(rest.length != 0) {
-                        var aux = rest.map((x) => {
+                        var aux = rest.map(function(x) {
                             return x[1];
                         });
                     
@@ -94,7 +94,7 @@ peg = (function() {
                     if (e) result.push(e);
 
                     if(r.length != 0) {
-                        var aux = r.map((x) => {
+                        var aux = r.map(function(x) {
                             return x[1];
                         });
                     

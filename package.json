@@ -31,10 +31,12 @@
     "url": "https://github.com/alu0100825893/proyecto-equipo-com/issues"
   },
   "homepage": "https://github.com/alu0100825893/proyecto-equipo-com#readme",
-   "dependencies": {
-    "express": "*",
+  "dependencies": {
     "ejs": "*",
-    "express-ejs-layouts": "*"
+    "express": "*",
+    "express-ejs-layouts": "*",
+    "mongodb": "^2.1.19",
+    "mongoose": "^4.4.17"
   },
   "devDependencies": {
     "gulp": "*",
@@ -42,8 +44,7 @@
     "chai": "*",
     "karma": "*",
     "karma-mocha": "*",
-     "karma-firefox-launcher": "*",
-     "karma-phantomjs-launcher": "*"
+    "karma-firefox-launcher": "*",
+    "karma-phantomjs-launcher": "*"
   }
-
 }

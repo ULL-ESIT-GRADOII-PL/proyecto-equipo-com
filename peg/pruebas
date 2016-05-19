@@ -12,4 +12,16 @@ while 4  < 5 do a = 7   while do
 
 a = fact(8,6,a)   funciones llamada
 
+const q = 5, w = 34, p = 5;
 
+var a,b,c;
+
+
+
+function fact(num) {
+          if num <= 1 then return 1;
+          return num*fact(num-1)
+};
+{
+
+}

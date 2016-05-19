@@ -1,1 +1,13 @@
-if num <= 1 then return 1
+
+const par = 2;
+var a;
+
+function fun()
+var p;
+{
+    a = 8
+};
+
+{
+
+}

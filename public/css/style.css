@@ -1,3 +1,72 @@
-#arbolFinal {
-    white-space: pre;
+h1 {
+  color: black;
+  font-family: Arial; }
+
+/********************************************************************
+* MENU PRINCIPAL
+*********************************************************************/
+.menuEnlaces {
+  background-color: #202020;
+  width: 100%;
+  text-align: left;
+  height: 35px;
+  overflow: hidden; }
+
+.menuEnlaces div {
+  background-color: #202020;
+  display: inline-block;
+  padding: 8px 0px; }
+  .menuEnlaces div a {
+    font-family: Arial;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 40px; }
+
+.menuEnlaces div:hover {
+  background-color: #050505; }
+  .menuEnlaces div:hover a {
+    color: #40D0F0;
+    text-decoration: none; }
+
+/********************************************************************
+* CONTAINER BODY
+*********************************************************************/
+.contenidoBody {
+  width: 100%;
+  height: 100%;
+  padding: 10px; }
+
+body {
+  background-color: white;
+  color: black;
+  font-family: Helvetica, sans-serif;
+  padding: 0px;
+  margin: 0px; }
+
+/*
+table , th, td {
+  @extend div;
+   border: $borde-tabla solid $color-tabla;
 }
+
+#finaltable:hover td {
+  background-color: green;
+}
+
+tr:nth-child(odd){
+  background-color:black;
+}
+
+tr:nth-child(even) {
+  background-color:blue;
+}
+
+tr.error       {
+  background-color: red;
+}
+*/
+#arbolFinal {
+  white-space: pre; }
+
+/*# sourceMappingURL=style.css.map */

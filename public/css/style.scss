@@ -1,0 +1,101 @@
+$font-stack: Helvetica, sans-serif;
+$color-titulo: black;
+$color-fondo: white;
+$color-letra: black;
+$color-tabla: black;
+$borde-tabla: 1px;
+
+// Configuración de menuEnlaces
+$color-fondo-menuEnlaces: #202020;
+$color-fondo-hover-menuEnlaces: #050505;
+$color-letra-menuEnlaces: white;
+$color-letra-hover-menuEnlaces: #40D0F0;
+$alto-barra-menuEnlaces: 35px;
+$ancho-boton-menuEnlaces: 40px;
+$espaciadoVertical-boton-menuEnlaces: 8px;
+
+h1 {
+  color: $color-titulo;
+  font-family: Arial;
+}
+
+/********************************************************************
+* MENU PRINCIPAL
+*********************************************************************/
+// El container de enlaces superior en sí
+.menuEnlaces{
+    background-color: $color-fondo-menuEnlaces;
+    width: 100%;
+    text-align: left;
+    height: $alto-barra-menuEnlaces;
+    overflow: hidden;
+}
+
+// Todo componente dentro del container de menuEnlaces
+.menuEnlaces div{
+    background-color: $color-fondo-menuEnlaces;
+    display: inline-block;
+    padding: $espaciadoVertical-boton-menuEnlaces 0px;
+    // Los enlaces de cada div
+    a {
+        font-family: Arial;
+        color: $color-letra-menuEnlaces;
+        text-decoration: none;
+        font-weight: bold;
+        padding: $espaciadoVertical-boton-menuEnlaces $ancho-boton-menuEnlaces;
+    }
+}
+.menuEnlaces div:hover{
+    background-color: $color-fondo-hover-menuEnlaces;
+    // Cambiar el color del enlace cuando se haga hover
+    a{
+        color: $color-letra-hover-menuEnlaces;
+        text-decoration: none;
+    }
+}
+
+/********************************************************************
+* CONTAINER BODY
+*********************************************************************/
+.contenidoBody {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+div {
+}
+
+body {
+  background-color: $color-fondo;
+  color: $color-letra;
+  font-family: $font-stack;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*
+table , th, td {
+  @extend div;
+   border: $borde-tabla solid $color-tabla;
+}
+
+#finaltable:hover td {
+  background-color: green;
+}
+
+tr:nth-child(odd){
+  background-color:black;
+}
+
+tr:nth-child(even) {
+  background-color:blue;
+}
+
+tr.error       {
+  background-color: red;
+}
+*/
+#arbolFinal {
+    white-space: pre;
+}

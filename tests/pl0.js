@@ -64,12 +64,18 @@ peg = (function() {
                                 if (p) result.push(p.value);
 
                                 result = result.concat(rp.map(function(x) { return x[1].value; }));
-
+                                  /*
                               return Object.assign(b,{
                                  type: 'FUNCTION',
                                  name: id.value,
                                  params: result
                                });
+                               */
+                               b["type"] = 'FUNCTION';
+                               b["name"] = id.value;
+                               b["params"] = result;
+
+                               return b;
                               },
         peg$c5 = function(first, rest) {
                     var result = [];

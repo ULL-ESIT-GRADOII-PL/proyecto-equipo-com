@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // Iniciar la conexión con mongoDB
-database.conectar();
+//database.conectar();
 
 
 app.get('/arbol', (req, res) => {

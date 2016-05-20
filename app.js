@@ -18,10 +18,12 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('port', (process.env.PORT || 5000)); 
 
-
+/*
 app.get('/', (req, res) => {
   res.render('layout');
-});
+});*/
+
+
 
 // Iniciar la conexión con mongoDB
 database.conectar();
@@ -38,8 +40,19 @@ app.get('/arbol', (req, res) => {
   
 });
 
+// Para cuando se pida guardar en la base de datos
+app.get('/mongo/save', (req, res) => {
+    database.guardarEntrada(req, res);
+
+});
+
+// Para cuando se pida recuperar los botones
+app.get('/', (req, res)  => {
+    database.getBotones(res);
+});
 
 
 app.listen(app.get('port'), () => {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
+

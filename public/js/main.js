@@ -20,3 +20,10 @@ $(document).ready(function () {
     
     
 });
+
+//Funcion para cargar un archivo de ejemplo en la entrada
+var dump = function(fileName) {
+    $.get(fileName, function (data) {
+        $("#original").val(data);
+    });
+};

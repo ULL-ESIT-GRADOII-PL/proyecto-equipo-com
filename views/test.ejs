@@ -4,22 +4,24 @@
     <title>Mocha</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/tests/mocha.css" />
+    <link rel="stylesheet" href="mocha.css" />
   </head>
   <body>
-    
+    <div>
+        <a href="/">Volver. Proyecto final</a>
+    </div>
     <div id="mocha"></div>
 
-    <script src="../public/tests/chai.js"></script>
-    <script src="../public/tests/mocha.js"></script>
-   <script src="../public/tests/pl0.js"></script>
+    <script src="chai.js"></script>
+    <script src="mocha.js"></script>
+   <script src="pl0.js"></script>
 
     <script>mocha.setup('bdd');</script>
-    <script src="../public/tests/tests.js"></script>
+    <script src="tests.js"></script>
 
     <script>
 
-      mocha.run();
+        mocha.run();
     </script>
   </body>
 </html>

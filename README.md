@@ -11,9 +11,9 @@
 * [Página de la asignatura PL Miguel](https://alu0100886870.github.io/pl.html)
 * [Repositorio](https://github.com/ULL-ESIT-GRADOII-PL/proyecto-equipo-com)
 * [Aplicación-C9](https://my-space-alu0100825893.c9.io)
-[Aplicación-Heroku]() (POR DETERMINAR)
+* [Aplicación-Heroku]() (POR DETERMINAR)
 * [Fork-Con los Issues](https://github.com/alu0100825893/proyecto-equipo-com)
-* [Test con encubrimiento]() (POR DETERMINAR)
+* [Test con encubrimiento]() (POR DETERMINAR, en el despliege se pueden ver los test)
 
 ### Objetivo
 Escriba un analizador del lenguaje PL0 usando PEGjs así como las tecnologías vistas durante el curso: ECMA6, Node.js, expressJS, MongoDB, Mongoose, SASS, etc.

@@ -15,10 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'tests/mocha.js',
-      'tests/chai.js',
-      'tests/pl0.js',
-      'tests/tests.js'
+      'public/tests/mocha.js',
+      'public/tests/chai.js',
+      'public/tests/pl0.js',
+      'public/tests/tests.js'
 
     ],
 

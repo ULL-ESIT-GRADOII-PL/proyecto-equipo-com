@@ -41,7 +41,10 @@ app.get('/arbol', (req, res) => {
 
 });
 
-
+app.get('/tests', (req, res) => {
+  console.log("tests env");
+  res.render('test');
+});
 
 app.listen(app.get('port'), () => {
   console.log("Node app is running at localhost:" + app.get('port'));

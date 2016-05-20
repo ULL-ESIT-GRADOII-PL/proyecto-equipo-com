@@ -8,6 +8,10 @@ var PEG = require("./models/pl0.js");
 var SEMANTIC = require("./lib/semantic.js");
 var util = require('util');
 
+// Bases de datos
+var mongoose = require('mongoose');
+var database = require('./models/database.js');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -19,6 +23,10 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/', (req, res) => {
   res.render('layout');
 });
+
+// Iniciar la conexión con mongoDB
+database.conectar();
+
 
 app.get('/arbol', (req, res) => {
   console.log(req.query.contenido);

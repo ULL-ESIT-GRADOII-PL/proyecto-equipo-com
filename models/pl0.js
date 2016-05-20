@@ -41,29 +41,11 @@ module.exports = (function() {
                   cD = cD? cD : [];
                   vD = vD? vD : [];
 
-                  var sT = {
-                    father: null
-                  };
-
-                  cD.forEach(function(x) {
-                    sT[x[0]] = x;
-                  });
-
-                  vD.forEach(function(x) {
-                    sT[x] = x;
-                  });
-
-                  fD.forEach(function(x) {
-                    //console.log(x);
-                    sT[x.name] = x;
-                  });
-
                   return {
                       type: 'BLOCK',
                       constants: cD,
                       variables: vD,
                       functions: fD,
-                      symbolTable: sT,
                       main: st
                   };
                 },

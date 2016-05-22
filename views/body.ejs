@@ -34,8 +34,15 @@
 </table>
 
 <div>
-<button class="button" id ="conseguirArbol">Analizar</button></button>
+<button class="button" id ="conseguirArbol">Analizar</button>
+<button id ="buttonSave" type="button">Guardar entrada</button>
 </div>
-
+<br/>
+<div class="columnaDerecha">
+Entradas guardadas (database):<br/>
+            <% botones.forEach(function(elemnto, i) { %>
+            <button class="botonQuery" id='<%= elemnto.numeroRegistro %>' ><span><%= elemnto.nombre %></span></button>
+            <% }); %>
+</div>
 <span class="output" id="arbolFinal"></span>
 </div>

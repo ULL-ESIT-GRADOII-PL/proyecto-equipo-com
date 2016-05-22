@@ -7,7 +7,7 @@ $borde-tabla: 1px;
 
 // Configuración de menuEnlaces
 $color-fondo-menuEnlaces: #202020;
-$color-fondo-hover-menuEnlaces: #050505;
+$color-fondo-hover-menuEnlaces: #090909;
 $color-letra-menuEnlaces: white;
 $color-letra-hover-menuEnlaces: #40D0F0;
 $alto-barra-menuEnlaces: 35px;
@@ -38,7 +38,20 @@ header {
     text-align: left;
     //height: $alto-barra-menuEnlaces;
     display: inline-block;
-  //  overflow: hidden;
+    
+    div:hover {
+      //background-color: $color-fondo-hover-menuEnlaces;
+      border-color: transparent transparent orange transparent;
+      // Cambiar el color del enlace cuando se haga hover
+    }
+    
+    div:active {
+      border-color: transparent transparent orange transparent;
+      background-color: $color-fondo-hover-menuEnlaces;
+    }
+    
+    
+    
 }
 
 // Todo componente dentro del container de menuEnlaces
@@ -55,16 +68,6 @@ header {
         text-decoration: none;
         font-weight: bold;
         padding: $espaciadoVertical-boton-menuEnlaces $ancho-boton-menuEnlaces;
-    }
-}
-.menuEnlaces div:hover{
-    //background-color: $color-fondo-hover-menuEnlaces;
-    border: 5px solid;
-    border-color: transparent transparent orange transparent;
-    // Cambiar el color del enlace cuando se haga hover
-    a{
-        //color: $color-letra-hover-menuEnlaces;
-        text-decoration: none;
     }
 }
 

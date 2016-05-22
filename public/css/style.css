@@ -13,6 +13,11 @@ header {
   width: 100%;
   text-align: left;
   display: inline-block; }
+  .menuEnlaces div:hover {
+    border-color: transparent transparent orange transparent; }
+  .menuEnlaces div:active {
+    border-color: transparent transparent orange transparent;
+    background-color: #090909; }
 
 .menuEnlaces div {
   background-color: #202020;
@@ -26,12 +31,6 @@ header {
     text-decoration: none;
     font-weight: bold;
     padding: 8px 40px; }
-
-.menuEnlaces div:hover {
-  border: 5px solid;
-  border-color: transparent transparent orange transparent; }
-  .menuEnlaces div:hover a {
-    text-decoration: none; }
 
 /********************************************************************
 * CONTAINER BODY

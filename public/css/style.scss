@@ -36,8 +36,9 @@ header {
     background-color: $color-fondo-menuEnlaces;
     width: 100%;
     text-align: left;
-    height: $alto-barra-menuEnlaces;
-    overflow: hidden;
+    //height: $alto-barra-menuEnlaces;
+    display: inline-block;
+  //  overflow: hidden;
 }
 
 // Todo componente dentro del container de menuEnlaces
@@ -45,6 +46,8 @@ header {
     background-color: $color-fondo-menuEnlaces;
     display: inline-block;
     padding: $espaciadoVertical-boton-menuEnlaces 0px;
+    border: 5px solid;
+    border-color: transparent transparent gray transparent;
     // Los enlaces de cada div
     a {
         font-family: Arial;
@@ -55,10 +58,12 @@ header {
     }
 }
 .menuEnlaces div:hover{
-    background-color: $color-fondo-hover-menuEnlaces;
+    //background-color: $color-fondo-hover-menuEnlaces;
+    border: 5px solid;
+    border-color: transparent transparent orange transparent;
     // Cambiar el color del enlace cuando se haga hover
     a{
-        color: $color-letra-hover-menuEnlaces;
+        //color: $color-letra-hover-menuEnlaces;
         text-decoration: none;
     }
 }

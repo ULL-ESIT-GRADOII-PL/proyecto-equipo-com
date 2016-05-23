@@ -7,12 +7,12 @@ $borde-tabla: 1px;
 
 // Configuración de menuEnlaces
 $color-fondo-menuEnlaces: #202020;
-$color-fondo-hover-menuEnlaces: #090909;
+$color-fondo-hover-menuEnlaces: #101010;
 $color-letra-menuEnlaces: white;
 $color-letra-hover-menuEnlaces: #40D0F0;
 $alto-barra-menuEnlaces: 35px;
 $ancho-boton-menuEnlaces: 40px;
-$espaciadoVertical-boton-menuEnlaces: 8px;
+$espaciadoVertical-boton-menuEnlaces: 5px;  // Permite mayor altura en los enlaces
 
 h1 {
   color: $color-titulo;
@@ -39,6 +39,22 @@ header {
     //height: $alto-barra-menuEnlaces;
     display: inline-block;
     
+    div{
+      background-color: $color-fondo-menuEnlaces;
+      display: inline-block;
+      padding: $espaciadoVertical-boton-menuEnlaces 0px;
+      border: 5px solid;
+      border-color: transparent transparent gray transparent;
+      // Los enlaces de cada div
+      a {
+          font-family: Arial;
+          color: $color-letra-menuEnlaces;
+          text-decoration: none;
+          font-weight: bold;
+          padding: $espaciadoVertical-boton-menuEnlaces $ancho-boton-menuEnlaces;
+      }
+    }
+    
     div:hover {
       //background-color: $color-fondo-hover-menuEnlaces;
       border-color: transparent transparent orange transparent;
@@ -50,25 +66,11 @@ header {
       background-color: $color-fondo-hover-menuEnlaces;
     }
     
-    
-    
-}
-
-// Todo componente dentro del container de menuEnlaces
-.menuEnlaces div{
-    background-color: $color-fondo-menuEnlaces;
-    display: inline-block;
-    padding: $espaciadoVertical-boton-menuEnlaces 0px;
-    border: 5px solid;
-    border-color: transparent transparent gray transparent;
-    // Los enlaces de cada div
-    a {
-        font-family: Arial;
-        color: $color-letra-menuEnlaces;
-        text-decoration: none;
-        font-weight: bold;
-        padding: $espaciadoVertical-boton-menuEnlaces $ancho-boton-menuEnlaces;
+    img.logo{
+      float: right;
+      margin: 5px 0 0;
     }
+    
 }
 
 /********************************************************************
@@ -84,11 +86,15 @@ header {
 * TABLA REDONDEADA
 ************************************************************************/
 .tablaRedondeada {
-  -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
-  border-radius: 1em;
-  background: #E6F8E0;
+ border:dashed 4px #000000;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+background-color:rgba(0, 90, 0, 0.5);
+  font-size: 14px;
+  color: white;
+  padding: 20px;
+  /*
   padding: 20px;
   border-top-width: 0px;
   border-right-width: 0px;
@@ -98,7 +104,7 @@ header {
   display: table;
   border-collapse: separate;
   border-spacing: 2px;
-  font-size: 14px;
+  font-size: 14px;*/
 }
 
 .columnaDerecha {

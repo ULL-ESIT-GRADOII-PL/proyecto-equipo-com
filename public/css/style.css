@@ -13,24 +13,26 @@ header {
   width: 100%;
   text-align: left;
   display: inline-block; }
+  .menuEnlaces div {
+    background-color: #202020;
+    display: inline-block;
+    padding: 5px 0px;
+    border: 5px solid;
+    border-color: transparent transparent gray transparent; }
+    .menuEnlaces div a {
+      font-family: Arial;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 40px; }
   .menuEnlaces div:hover {
     border-color: transparent transparent orange transparent; }
   .menuEnlaces div:active {
     border-color: transparent transparent orange transparent;
-    background-color: #090909; }
-
-.menuEnlaces div {
-  background-color: #202020;
-  display: inline-block;
-  padding: 8px 0px;
-  border: 5px solid;
-  border-color: transparent transparent gray transparent; }
-  .menuEnlaces div a {
-    font-family: Arial;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 40px; }
+    background-color: #101010; }
+  .menuEnlaces img.logo {
+    float: right;
+    margin: 5px 0 0; }
 
 /********************************************************************
 * CONTAINER BODY
@@ -44,11 +46,15 @@ header {
 * TABLA REDONDEADA
 ************************************************************************/
 .tablaRedondeada {
-  -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 1em;
-  background: #E6F8E0;
+  border: dashed 4px #000000;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: rgba(0, 90, 0, 0.5);
+  font-size: 14px;
+  color: white;
+  padding: 20px;
+  /*
   padding: 20px;
   border-top-width: 0px;
   border-right-width: 0px;
@@ -58,7 +64,7 @@ header {
   display: table;
   border-collapse: separate;
   border-spacing: 2px;
-  font-size: 14px; }
+  font-size: 14px;*/ }
 
 .columnaDerecha {
   position: absolute;

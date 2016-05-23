@@ -1,0 +1,48 @@
+<div class="contenidoBody">
+<header>
+    <h1>Proyecto Procesadores de Lenguajes (PL0) - Equipo-COM</h1>
+    <table class="tablaRedondeada">
+        <tr>
+            <td>
+                Este proyecto consiste en un analizador del lenguaje PL0 usando PEGjs,
+                donde también se utilizan las tecnologías vistas durante el curso 2015/2016 en <a href="https://campusvirtual.ull.es/1516/course/view.php?id=178">PL</a>:
+                <br/>ECMA6, Node.js, expressJS, MongoDB, Mongoose, SASS, etc.
+                <br/>La salida debe ser el árbol de análisis sintáctico del programa de entrada.
+                <br/><br/>Para más información visite el repositorio: <a href="https://github.com/alu0100825893/proyecto-equipo-com">Repositorio</a>
+            </td>
+        </tr>
+    </table>
+</header>
+
+<div class="separador"></div>
+
+<table>
+    <tr>
+        <td>Entrada: </td>
+        <td><textarea autofocus cols = "80" rows = "5" id="original"></textarea></td> 
+    
+    </tr>
+    <tr>
+        <td>Click para cargar ejemplos: </td>
+        <td>
+            <button class="button" id ="ejemplo1" onclick="dump('ejemplos/ejemplo1');">Ejemplo 1</button></button>
+            <button class="button" id ="ejemplo2" onclick="dump('ejemplos/ejemplo2');">Ejemplo 2</button></button>
+            <button class="button" id ="ejemplo3" onclick="dump('ejemplos/ejemplo3');">Ejemplo 3</button></button>
+            <button class="button" id ="ejemplo4" onclick="dump('ejemplos/ejemplo4');">Ejemplo 4</button></button>
+        </td>
+    </tr>
+</table>
+
+<div>
+<button class="button" id ="conseguirArbol">Analizar</button>
+<button id ="buttonSave" type="button">Guardar entrada</button>
+</div>
+<br/>
+<div class="columnaDerecha">
+Entradas guardadas (database):<br/>
+            <% botones.forEach(function(elemnto, i) { %>
+            <button class="botonQuery" id='<%= elemnto.numeroRegistro %>' ><span><%= elemnto.nombre %></span></button>
+            <% }); %>
+</div>
+<span class="output" id="arbolFinal"></span>
+</div>

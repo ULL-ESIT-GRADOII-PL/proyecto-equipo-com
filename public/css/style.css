@@ -1,0 +1,112 @@
+h1 {
+  color: #0489B1;
+  font-family: Arial; }
+
+header {
+  margin: 0px 0px 20px; }
+
+/********************************************************************
+* MENU PRINCIPAL
+*********************************************************************/
+.menuEnlaces {
+  background-color: #202020;
+  width: 100%;
+  text-align: left;
+  display: inline-block; }
+  .menuEnlaces div {
+    background-color: #202020;
+    display: inline-block;
+    padding: 5px 0px;
+    border: 5px solid;
+    border-color: transparent transparent gray transparent; }
+    .menuEnlaces div a {
+      font-family: Arial;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 40px; }
+  .menuEnlaces div:hover {
+    border-color: transparent transparent orange transparent; }
+  .menuEnlaces div:active {
+    border-color: transparent transparent orange transparent;
+    background-color: #101010; }
+  .menuEnlaces img.logo {
+    float: right;
+    margin: 5px 0 0; }
+
+/********************************************************************
+* CONTAINER BODY
+*********************************************************************/
+.contenidoBody {
+  width: 100%;
+  height: 100%;
+  padding: 10px; }
+
+/***********************************************************************
+* TABLA REDONDEADA
+************************************************************************/
+.tablaRedondeada {
+  border: dashed 4px #000000;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: rgba(0, 90, 0, 0.5);
+  font-size: 14px;
+  color: white;
+  padding: 20px;
+  /*
+  padding: 20px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  width: 880px;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  font-size: 14px;*/ }
+
+.columnaDerecha {
+  position: absolute;
+  padding: 20px;
+  top: 50px;
+  right: 20px;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 0.2em;
+  background: white; }
+
+body {
+  background-color: white;
+  color: black;
+  font-family: Helvetica, sans-serif;
+  padding: 0px;
+  margin: 0px; }
+
+/*
+table , th, td {
+  @extend div;
+   border: $borde-tabla solid $color-tabla;
+}
+
+#finaltable:hover td {
+  background-color: green;
+}
+
+tr:nth-child(odd){
+  background-color:black;
+}
+
+tr:nth-child(even) {
+  background-color:blue;
+}
+
+tr.error       {
+  background-color: red;
+}
+*/
+#arbolFinal {
+  white-space: pre; }
+
+/*# sourceMappingURL=style.css.map */

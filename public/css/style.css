@@ -78,6 +78,16 @@ header {
   border-radius: 0.2em;
   background: white; }
 
+/************************************
+* ARBOL SINTACTICO
+************************************/
+.output {
+  text-align: left;
+  display: inline-block; }
+
+#arbolFinal {
+  text-align: left; }
+
 body {
   background-color: white;
   background-image: url("/assets/imgs/wallup.jpg");

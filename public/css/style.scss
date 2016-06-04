@@ -1,7 +1,7 @@
 $font-stack: Helvetica, sans-serif;
-$color-titulo: #0489B1;
+$color-titulo: #34B9E1;
 $color-fondo: white;
-$color-letra: black;
+$color-letra: white;
 $color-tabla: black;
 $borde-tabla: 1px;
 
@@ -77,8 +77,13 @@ header {
 * CONTAINER BODY
 *********************************************************************/
 .contenidoBody {
-  width: 100%;
+  //width: 100%;
   height: 100%;
+  
+  // Si lo queremos limitar como hacen los blogs esos modernos..
+  width: 1024;
+  display: inline-block;
+  
   padding: 10px;
 }
 
@@ -124,6 +129,15 @@ div {
 
 body {
   background-color: $color-fondo;
+  background-image: url('/assets/imgs/wallup.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  // Hacer tint para que no se vea tan fuerte
+  background-color: rgba(10,10,10,.5); // Tint color
+  background-blend-mode: multiply;
+  
+  background-attachment: fixed;
+  
   color: $color-letra;
   font-family: $font-stack;
   padding: 0px;

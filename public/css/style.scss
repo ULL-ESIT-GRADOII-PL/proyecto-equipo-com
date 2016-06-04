@@ -112,9 +112,13 @@ background-color:rgba(0, 90, 0, 0.5);
   font-size: 14px;*/
 }
 
+/**********************************************
+* COLUMNA FLOTANTE DERECHA (PARA VER LOS DATOS EN LA DB)
+**********************************************/
 .columnaDerecha {
   position: absolute;
   padding: 20px;
+  color: black;
   top: 50px;
   right: 20px;
   -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);

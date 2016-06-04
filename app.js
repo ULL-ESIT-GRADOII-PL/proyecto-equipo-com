@@ -47,10 +47,17 @@ app.get('/mongo/save', (req, res) => {
 
 });
 
-// Para cuando se pida recuperar los botones
+// Para recuperar los botones al entrar en la página
 app.get('/', (req, res)  => {
     database.getBotones(res);
 });
+
+// Recuperar el contenido de un botón pulsado
+app.get('/mongo/queryBoton', (req, res) =>{
+   database.queryBoton(req, res);
+
+});
+
 
 app.get('/tests', (req, res) => {
   console.log("tests env");

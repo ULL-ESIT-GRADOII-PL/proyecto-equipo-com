@@ -39,12 +39,14 @@
 <button id ="buttonSave" type="button">Guardar entrada</button>
 </div>
 <br/>
+
 <div class="columnaDerecha">
 Entradas guardadas (database):<br/>
             <% botones.forEach(function(elemnto, i) { %>
             <button class="botonQuery" id='<%= elemnto.numeroRegistro %>' ><span><%= elemnto.nombre %></span></button>
             <% }); %>
 </div>
+
 <div class="output">
 <span class="output" id="arbolFinal"></span>
 </div>

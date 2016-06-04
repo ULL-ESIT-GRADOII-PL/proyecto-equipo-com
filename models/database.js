@@ -129,3 +129,16 @@ var guardarEntrada = module.exports.guardarEntrada = function(req, res) {
         }
     });
 };
+
+
+//Lee la info del boton
+var queryBoton = module.exports.queryBoton = function(req, res) {
+    
+    console.log(req.query.botonId);
+    let request = req.query.botonId;
+    Csv.find({numeroRegistro: request}, (err, finded) => { 
+        let answer = finded[0].contenido;
+        res.send(answer);
+    });
+    
+};

@@ -5,4 +5,7 @@ function fun(x)
 var u,i;
 function aux()
 const t  = 4;
-{ x = 5 }; { };  { }
+var x;
+{ x = 5 }; 
+{ };  
+{ }

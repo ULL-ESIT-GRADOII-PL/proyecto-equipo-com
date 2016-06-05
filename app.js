@@ -32,13 +32,26 @@ database.conectar();
 
 app.get('/arbol', (req, res) => {
   console.log(req.query.contenido);
+  
   //Obteniendo el arbol representativo con la gramática pl0
   let obj = PEG.parse(req.query.contenido);
-  SEMANTIC.eachBlockPre(obj,SEMANTIC.callbackAction,null);
-  SEMANTIC.ReadableTree(obj);
-  let arbol = util.inspect(obj, {depth: null});
-  console.log(arbol);
-  res.send(arbol);
+  let error = undefined;
+  error = SEMANTIC.eachBlockPre(obj,SEMANTIC.callbackAction,null,error);
+  if (error != undefined)
+    res.send(error);
+  else {
+    error = SEMANTIC.DeclarationBeforeUse(obj,error);
+    //console.log(error);
+    if (error != undefined) 
+      res.send(error);
+    else {
+      SEMANTIC.ReadableTree(obj);
+      
+      let arbol = util.inspect(obj, {depth: null});
+      //console.log(arbol);
+      res.send(arbol);
+    }
+  }
 });
 
 // Para cuando se pida guardar en la base de datos

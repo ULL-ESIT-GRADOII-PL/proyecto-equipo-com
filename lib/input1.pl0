@@ -1,8 +1,7 @@
-const a = 7;
-var b;
-function fun(x)
-
-var u,i;
-function aux()
-const t  = 4;
-{ x = 5 }; { };  { }
+const a = 7; var b;
+{
+    for 1 to 5 do {
+       if a < 3 then return a;
+       b = 3 + 6
+    } 
+}

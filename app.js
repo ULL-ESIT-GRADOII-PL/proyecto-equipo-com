@@ -34,22 +34,32 @@ app.get('/arbol', (req, res) => {
   console.log(req.query.contenido);
   
   //Obteniendo el arbol representativo con la gramática pl0
-  let obj = PEG.parse(req.query.contenido);
-  let error = undefined;
-  error = SEMANTIC.eachBlockPre(obj,SEMANTIC.callbackAction,null,error);
-  if (error != undefined)
-    res.send(error);
-  else {
-    error = SEMANTIC.DeclarationBeforeUse(obj,error);
-    //console.log(error);
-    if (error != undefined) 
+  let obj = undefined;
+  
+  try {
+    obj = PEG.parse(req.query.contenido);
+  }
+  catch(e) {
+    res.send(e.message + " Línea: " + e.location.start.line + " Columna: " + e.location.start.column);
+  }
+  
+  if (obj != undefined) {
+    let error = undefined;
+    error = SEMANTIC.eachBlockPre(obj,SEMANTIC.callbackAction,null,error);
+    if (error != undefined)
       res.send(error);
     else {
-      SEMANTIC.ReadableTree(obj);
-      
-      let arbol = util.inspect(obj, {depth: null});
-      //console.log(arbol);
-      res.send(arbol);
+      error = SEMANTIC.DeclarationBeforeUse(obj,error);
+      //console.log(error);
+      if (error != undefined) 
+        res.send(error);
+      else {
+        SEMANTIC.ReadableTree(obj);
+        
+        let arbol = util.inspect(obj, {depth: null});
+        //console.log(arbol);
+        res.send(arbol);
+      }
     }
   }
 });

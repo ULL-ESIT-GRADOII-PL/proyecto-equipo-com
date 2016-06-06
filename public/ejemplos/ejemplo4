@@ -1,5 +1,15 @@
-const q = 5, w = 34, p = 5;
+const a = 7;
+var b;
 
-var a,b,c;
 {
+    switch a do {
+        case 1:
+            a = 4
+            break;
+        case 5: {
+            b = 3+3;
+            a =3
+            }
+           
+    }
 }

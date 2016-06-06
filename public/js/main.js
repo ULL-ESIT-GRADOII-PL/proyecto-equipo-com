@@ -11,7 +11,7 @@ $(document).ready(function () {
                 $("#arbolFinal").text(data);
                }
                , error: function(jqXHR, textStatus, err){
-                   $("#arbolFinal").text("Error de sintaxis");
+                   $("#arbolFinal").text("No se han recibido datos");
                }
         });
         

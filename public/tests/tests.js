@@ -1,4 +1,4 @@
-//Importante¡¡¡¡    Generar el código de pl0.pegjs para los test con "pegjs -e peg pl0.pegjs ../tests/pl0.js"
+//Importante¡¡¡¡    Generar el código de pl0.pegjs para los test con "pegjs -e peg pl0.pegjs ../public/tests/pl0.js"
 var expect = chai.expect
 
 
@@ -167,6 +167,129 @@ describe('PL0', function(){
                                name: 'fun',
                                params: [ 'x' ] } ],
                           main: { type: 'COMPOUND', children: [] },
+                          name: { type: 'ID', value: '$main' },
+                          params: [] });
+    });
+    
+    it ('se permite el uso de for', function () {
+        expect(peg.parse("const a = 7; var b;"+
+                        "{"+
+                            "for 1 to 5 do {"+
+                               "if a < 3 then return a;"+
+                               "b = 3 + 6"+
+                            "} "+
+                        "}"
+        )).to.deep.equal({ type: 'BLOCK',
+                              constants: [ [ 'a', 7 ] ],
+                              variables: [ 'b' ],
+                              functions: [],
+                              main: 
+                               { type: 'COMPOUND',
+                                 children: 
+                                  [ { type: 'FOR',
+                                      start: { type: 'NUM', value: 1 },
+                                      end: { type: 'NUM', value: 5 },
+                                      st: 
+                                       { type: 'COMPOUND',
+                                         children: 
+                                          [ { type: 'IF',
+                                              c: 
+                                               { type: '<',
+                                                 left: { type: 'ID', value: 'a' },
+                                                 right: { type: 'NUM', value: 3 } },
+                                              st: { type: 'RETURN', children: { type: 'ID', value: 'a' } } },
+                                            { type: '=',
+                                              left: { type: 'ID', value: 'b' },
+                                              right: 
+                                               { type: '+',
+                                                 left: { type: 'NUM', value: 3 },
+                                                 right: { type: 'NUM', value: 6 } } } ] } } ] },
+                              name: { type: 'ID', value: '$main' },
+                              params: [] });
+
+    });
+    
+    it ('se permite el uso de do while', function () {
+        expect(peg.parse("const a = 7; var b;"+
+                        "{"+
+                           " do {"+
+                               "if a < 3 then return a;"+
+                               "b = 3 + 6"+
+                            "} while b < 100"+
+                        "}"
+        )).to.deep.equal({ type: 'BLOCK',
+                              constants: [ [ 'a', 7 ] ],
+                              variables: [ 'b' ],
+                              functions: [],
+                              main: 
+                               { type: 'COMPOUND',
+                                 children: 
+                                  [ { type: 'DOWHILE',
+                                      c: 
+                                       { type: '<',
+                                         left: { type: 'ID', value: 'b' },
+                                         right: { type: 'NUM', value: 100 } },
+                                      st: 
+                                       { type: 'COMPOUND',
+                                         children: 
+                                          [ { type: 'IF',
+                                              c: 
+                                               { type: '<',
+                                                 left: { type: 'ID', value: 'a' },
+                                                 right: { type: 'NUM', value: 3 } },
+                                              st: { type: 'RETURN', children: { type: 'ID', value: 'a' } } },
+                                            { type: '=',
+                                              left: { type: 'ID', value: 'b' },
+                                              right: 
+                                               { type: '+',
+                                                 left: { type: 'NUM', value: 3 },
+                                                 right: { type: 'NUM', value: 6 } } } ] } } ] },
+                              name: { type: 'ID', value: '$main' },
+                              params: [] });
+
+    });
+    
+    
+    it ('se permite el uso de switch', function () {
+      expect(peg.parse(
+      "const a = 7;"+
+        "var b;"+
+        "{"+
+            "switch a do {"+
+                "case 1:  a = 4 break;"+
+                "case 5: { b = 3+3; a =3 }"+
+            "}"+
+        "}"
+      )).to.deep.equal({ type: 'BLOCK',
+                          constants: [ [ 'a', 7 ] ],
+                          variables: [ 'b' ],
+                          functions: [],
+                          main: 
+                           { type: 'COMPOUND',
+                             children: 
+                              [ { type: 'SWITCH',
+                                  c: { type: 'ID', value: 'a' },
+                                  case: 
+                                   [ { c: { type: 'NUM', value: 1 },
+                                       st: 
+                                        { type: '=',
+                                          left: { type: 'ID', value: 'a' },
+                                          right: { type: 'NUM', value: 4 } },
+                                       break: true },
+                                     { c: { type: 'NUM', value: 5 },
+                                       st: 
+                                        { type: 'COMPOUND',
+                                          children: 
+                                           [ { type: '=',
+                                               left: { type: 'ID', value: 'b' },
+                                               right: 
+                                                { type: '+',
+                                                  left: { type: 'NUM', value: 3 },
+                                                  right: { type: 'NUM', value: 3 } } },
+                                             { type: '=',
+                                               left: { type: 'ID', value: 'a' },
+                                               right: { type: 'NUM', value: 3 } } ] },
+                                       break: false } ] } ] },
                           name: { type: 'ID', value: '$main' },
                           params: [] });
     });
